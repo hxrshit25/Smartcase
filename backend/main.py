@@ -11,7 +11,7 @@ app.add_middleware(CORSMiddleware, allow_origins=ALLOWED_ORIGINS, allow_credenti
 
 # Demo mode is enabled by default. Set DEMO_MODE=false and DEVICE_API_KEY in production.
 DEMO_MODE = True
-DEVICE_API_KEY = "change-this-device-key"
+DEVICE_API_KEY = os.getenv("DEVICE_API_KEY", "")
 state = {
     "device_id": "SC-001", "online": True, "mode": "demo", "battery": 86,
     "latitude": 31.3260, "longitude": 75.5762, "speed": 0.0,
